@@ -95,12 +95,12 @@ export default function Home() {
       <section className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            eyebrow="Explore the possibilities"
-            title="What We Bring You"
-            subtitle="Explore Ajrak textiles, home goods, food staples and more from our product categories."
+            eyebrow="Explore our range"
+            title="Products for Every Need"
+            subtitle="Browse A4 paper, clothes, jewelry, food, machinery, toys, stationery and decoration."
           />
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {productCategories.slice(0, 5).map((product, index) => (
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {productCategories.map((product, index) => (
               <Reveal key={product.title} delay={index * 80} direction="zoom">
                 <Link href="/products" className="group block overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-lg">
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -112,6 +112,7 @@ export default function Home() {
                     />
                   </div>
                   <h3 className="px-3 py-3 text-center font-bold text-navy-800 group-hover:text-maroon-700">{product.title}</h3>
+                  <p className="px-4 pb-4 text-center text-sm leading-5 text-slate-600">{product.description}</p>
                 </Link>
               </Reveal>
             ))}

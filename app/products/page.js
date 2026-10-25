@@ -6,7 +6,7 @@ import productCategories from "@/data/products";
 
 export const metadata = {
   title: "Products & Categories",
-  description: "Browse Ajrak Impex fashion, accessories, gadgets, sports gear and snacks.",
+  description: "Browse Ajrak Impex A4 paper, clothes, jewelry, food, machinery, toys, stationery and decoration.",
 };
 
 const support = [
@@ -27,8 +27,8 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             eyebrow="Find what you need"
-            title="Shop by Category"
-            subtitle="Browse all products or filter by Fashion, Accessories, Gadgets, Sports Gear or Snacks."
+            title="Explore Our Categories"
+            subtitle="Browse A4 paper, clothes, jewelry, food, machinery, toys, stationery and decoration."
           />
           <ProductCatalog categories={productCategories} />
           <p className="mt-6 text-center text-sm text-slate-500">
