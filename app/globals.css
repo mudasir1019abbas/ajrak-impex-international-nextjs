@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ---------- Theme: brand colors, fonts and animations ---------- */
+@theme {
+  --color-maroon-50: #fbf3f4;
+  --color-maroon-100: #f3dde0;
+  --color-maroon-600: #8a2232;
+  --color-maroon-700: #7a1c2a;
+  --color-maroon-800: #5f1520;
+  --color-navy-700: #1d3a6b;
+  --color-navy-800: #14294f;
+  --color-navy-900: #0d1c38;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-slide-left: slide-left 0.7s ease-out both;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-drive: drive 6s linear infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+  --animate-grow: grow 1.4s ease-out both;
+
+  @keyframes grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-left {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(122, 28, 42, 0.45); }
+    100% { box-shadow: 0 0 0 16px rgba(122, 28, 42, 0); }
+  }
+  @keyframes drive {
+    from { transform: translateX(-10%); }
+    to { transform: translateX(110%); }
+  }
+}
+
+/* Subtle ajrak-inspired geometric pattern (inline SVG, no image files needed) */
+.ajrak-pattern {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%237a1c2a' stroke-opacity='.12' stroke-width='1'%3E%3Cpath d='M24 4l20 20-20 20L4 24z'/%3E%3Ccircle cx='24' cy='24' r='6'/%3E%3Cpath d='M24 18v12M18 24h12'/%3E%3C/g%3E%3C/svg%3E");
+}
+.ajrak-pattern-dark {
+  background-color: #14294f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.08' stroke-width='1'%3E%3Cpath d='M24 4l20 20-20 20L4 24z'/%3E%3Ccircle cx='24' cy='24' r='6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#bg-issue {
+  background-color: #1d3a6b;
+  background-image: none;
+}
+@layer utilities{
+  .scrollbar-hide::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #bg-issue {
+    background-color: #14294f;
+    background-image: linear-gradient(rgba(20, 41, 79, 0.72), rgba(20, 41, 79, 0.72)), var(--hero-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body { @apply font-sans text-slate-700 antialiased bg-white; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
