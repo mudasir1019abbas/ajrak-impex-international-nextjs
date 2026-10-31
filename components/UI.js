@@ -15,7 +15,7 @@ export function SectionTitle({ eyebrow, title, subtitle, align = "center" }) {
 const variants = {
   primary: "bg-maroon-700 text-white hover:bg-maroon-800",
   navy: "bg-navy-800 text-white hover:bg-navy-900",
-  outline: "border border-maroon-700 text-maroon-700 hover:bg-maroon-700 hover:border-maroon-700",
+  outline: "border border-maroon-700 text-maroon-700 hover:bg-maroon-700 hover:border-maroon-700 hover:text-white",
   light: "bg-white text-navy-800 hover:bg-slate-100",
 };
 const btn =
